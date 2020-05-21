@@ -84,11 +84,10 @@ body {
   color: beige;
   font-size: 100px;
   animation: slidein 10s infinite;
+  animation-direction: alternate;
 }
 
 @keyframes slidein {
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
   from {
     margin-left: 40%;
     font-size: 10px;
