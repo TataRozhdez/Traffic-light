@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./img/doroga.jpg);
+  background-size: cover;
+}
+.move-element {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: move 10s infinite;
+  animation-timing-function: ease-in-out;
+}
+.move-element:hover {
+  animation-play-state: paused;
+}
+.traffic-light {
+  position: relative;
+  background: center / contain no-repeat url(./img/traffic.svg);
+  width: 200px;
+  height: 240px;
+}
+.light {
+  display: block;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 8px;
+  opacity: 0.2;
+  transition: opacity 0.2s;
+  outline: none;
+}
+.active {
+  opacity: 1;
+}
+.red {
+  background-color: #ff0606;
+  position: absolute;
+  top: 19px;
+  left: 64px;
+}
+.yellow {
+  background-color: #eeff00;
+  position: absolute;
+  top: 91px;
+  left: 64px;
+}
+.green {
+  background-color: #06ff068c;
+  position: absolute;
+  top: 161px;
+  left: 64px;
+}
+.control {
+  display: inline;
+}
+.go,
+.stop {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #70615d;
+  background-color: #70615d;
+  opacity: 0.5;
+}
+.go:focus-within,
+.stop:focus-within {
+  border: 1px solid #ff7f00;
+  background-color: #ff7f00;
+  opacity: 0.9;
+}
+.text {
+  position: absolute;
+  top: 80%;
+  color: beige;
+  font-size: 100px;
+  animation: slidein 10s;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 40%;
+    font-size: 10px;
+  }
+  to {
+    margin-left: 0%;
+    font-size: 100px; 
+  }
+}
+
+@keyframes move {
+  50% {
+    margin-top: 1.6em;
+    margin-left: -5.6em;
+  }
+}
+
